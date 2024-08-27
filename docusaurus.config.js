@@ -6,6 +6,7 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   customFields: {
@@ -207,7 +208,7 @@ const config = {
             title: '交流',
             items: [
               {
-                label: 'QQ群',
+                label: 'QQ 群',
                 href: 'https://qm.qq.com/q/dENGavSflK',
               },
             ],
@@ -231,8 +232,8 @@ const config = {
       },
       // 深浅主题
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.vsLight,
+        darkTheme: prismThemes.vsDark,
       },
       // 颜色随系统切换
       colorMode: {
@@ -249,6 +250,9 @@ const config = {
 
         indexName: 'yizhan',
 
+      },
+      mermaid: {
+        theme: { light: "neutral", dark: "dark" },
       },
     }),
 
