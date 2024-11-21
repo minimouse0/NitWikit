@@ -1,4 +1,5 @@
 ---
+title: Citizens
 sidebar_position: 2
 ---
 
@@ -8,11 +9,13 @@ sidebar_position: 2
 
 `官网` https://wiki.citizensnpcs.co/Citizens_Wiki
 
+`Bukkit(旧)` https://dev.bukkit.org/projects/citizens
+
 `SpigotMC` https://www.spigotmc.org/resources/citizens.13811/
 
-`Bukkit(太老旧不要使用)` https://dev.bukkit.org/projects/citizens
-
 `GitHub` https://github.com/CitizensDev/Citizens2
+
+`文档` https://wiki.citizensnpcs.co/Citizens_Wiki
 
 `插件百科` https://www.mineplugin.org/Citizens
 
@@ -22,7 +25,7 @@ sidebar_position: 2
 
 ## 下载
 
-在SpigotMC帖内自行寻找,通常会遭到群友以 *懒* *看不懂英文* *它是英文的* 为由的谩骂
+在SpigotMC帖内自行寻找，通常会遭到群友以 *懒* *看不懂英文* *它是英文的* 为由的谩骂
 
 ## 执行命令
 

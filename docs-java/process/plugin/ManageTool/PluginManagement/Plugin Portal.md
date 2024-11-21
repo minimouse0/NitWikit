@@ -1,4 +1,5 @@
 ---
+title: Plugin Portal
 sidebar_position: 4
 ---
 
@@ -12,4 +13,4 @@ sidebar_position: 4
 
 :::
 
-以前发现的一个妙妙插件,可以在游戏内下载和安装插件。
+以前发现的一个妙妙插件，可以在游戏内下载和安装插件。

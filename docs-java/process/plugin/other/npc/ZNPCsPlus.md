@@ -1,4 +1,5 @@
 ---
+title: ZNPCsPlus
 sidebar_position: 5
 ---
 
@@ -14,4 +15,4 @@ sidebar_position: 5
 
 :::
 
-比Citizens简单的NPC插件,ZNPCs的加强版本。
+比Citizens简单的NPC插件，ZNPCs的加强版本。

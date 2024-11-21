@@ -1,4 +1,5 @@
 ---
+title: ServerUtils
 sidebar_position: 3
 ---
 
@@ -8,9 +9,9 @@ sidebar_position: 3
 
 `SpigotMC` https://www.spigotmc.org/resources/.79599/
 
-`GitHub` https://github.com/frankheijden/serverutils
-
 `Modrinth` https://modrinth.com/plugin/serverutils
+
+`GitHub` https://github.com/frankheijden/serverutils
 
 :::
 

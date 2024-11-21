@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # 这是什么？
 
-这是本文档的阅读指引,为你提供参考,不至于摸不着头脑
+这是本文档的阅读指引，为你提供参考，不至于摸不着头脑
 
 ## 我想开 Java 版服务器
 
@@ -33,10 +33,10 @@ sidebar_position: 2
 
 # 跳转
 
-例如在 **“Java”** 的 [选择、下载和安装 Java](https://yizhan.wiki/NitWikit/Java/preparation/choose-and-download-and-install-java) 只贴了一行链接跳转到了通用
+例如在 **“Java”** 的 [选择、下载和安装 Java](https://nitwikit.yizhan.wiki/Java/preparation/choose-and-download-and-install-java) 只贴了一行链接跳转到了通用
 
 这是因为此部分内容 **“Java”** 与 **“Bedrock”** 相同。阅读完成那节回来即可
 
 # 搜索
 
-搜索只能在此板块内使用,例如在 **“Java”** 板块不能搜索到 **“Bedrock”** 板块的内容
+搜索只能在此板块内使用，例如在 **“Java”** 板块不能搜索到 **“Bedrock”** 板块的内容

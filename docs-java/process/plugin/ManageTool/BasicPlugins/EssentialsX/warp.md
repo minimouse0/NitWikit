@@ -9,7 +9,7 @@ sidebar_position: 6
 
 ## 创建地标
 
-```
+```text
 /setwarp <地标名>
 ```
 
@@ -17,7 +17,7 @@ sidebar_position: 6
 
 ## 传送地标
 
-```
+```text
 /warp <地标名>
 ```
 
@@ -29,7 +29,7 @@ sidebar_position: 6
 
 ## 删除地标
 
-```
+```text
 /delwarp <地标名>
 ```
 
@@ -37,6 +37,6 @@ sidebar_position: 6
 
 ## 更多
 
-如果你想让玩家自行设置私有地标,公开地标,甚至导航到地标等
+如果你想让玩家自行设置私有地标，公开地标，甚至导航到地标等
 
 或许你可以看看 [Waypoints](https://www.minebbs.com/resources/.9062) 插件

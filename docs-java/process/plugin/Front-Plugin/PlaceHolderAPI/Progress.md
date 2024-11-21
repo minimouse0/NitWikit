@@ -1,6 +1,9 @@
 ---
+title: 进度条
 sidebar_position: 7
 ---
+
+# 进度条
 
 :::info
 

@@ -1,10 +1,11 @@
 ---
+title: CheckItem
 sidebar_position: 4
 ---
 
 # CheckItem
 
-**有关 CheckItem 的相关链接**
+## 有关 CheckItem 的相关链接
 
 :::info
 
@@ -17,7 +18,8 @@ sidebar_position: 4
 :::
 
 ## 安装此扩展
-```
+
+```text
 /papi ecloud download CheckItem
 /papi reload
 ```
@@ -25,13 +27,14 @@ sidebar_position: 4
 ## 教程
 
 ![](_images/CheckItem/remove-item.png)
-```
+
+```text
 /papi parse me %checkitem_remove_diamond%
 ```
 
-在 [启用give和remove](#启用give和remove) 后,跑一下图中的变量会收取玩家所有的钻石
+在 [启用give和remove](#启用give和remove) 后，跑一下图中的变量会收取玩家所有的钻石
 
-变量中 **remove** 的位置在作者项目的 README 中,并没有名字,其实这个地方决定了这个变量的效果
+变量中 **remove** 的位置在作者项目的 README 中，并没有名字，其实这个地方决定了这个变量的效果
 
 如果没有 **remove** 那么这个变量就会判断玩家是否拥有这个物品
 
@@ -46,9 +49,9 @@ sidebar_position: 4
 - give 给予物品      %checkitem_give_mat:diamond%    // 给予玩家一个钻石
 - remove 收取物品    %checkitem_remove_mat:diamond%  // 收取玩家背包中所有的钻石
 - amount 查看数量    %checkitem_amount_mat:diamond%  // 查看玩家背包中的钻石数量
-- getinfo 物品信息   %checkitem_getinfo:0%           // 查看玩家槽位0的物品信息
+- getinfo 物品信息   下面会讲到
 
-你应该注意到了 `mat:diamond` ,因为我写了diamond所以这些变量的功能是针对钻石的
+你应该注意到了 `mat:diamond` ，因为我写了diamond所以这些变量的功能是针对钻石的
 
  > mat是 material 的缩写
 
@@ -64,13 +67,15 @@ sidebar_position: 4
 
 :::note
 
-不同修饰符使用英文逗号“,”来连接
+不同修饰符使用英文逗号“，”来连接
 
 如同上面的 `%checkitem_remove_mat:diamond,amt:10%`
 
 同时使用了 mat 和 amt 两个修饰符
 
 :::
+
+### 修饰符
 
 可用的修饰符有：
 
@@ -95,11 +100,33 @@ sidebar_position: 4
 - nbtstrings        // nbt
 - nbtints
 
-## 例子：收取ia物品
+### getinfo
+
+用来获取玩家指定背包位置的物品信息
+
+```text
+%checkitem_getinfo:<槽位>_<修饰符1>,<修饰符2>,<...>%
+```
+
+特别的，\<槽位\> 可以使用 `mainhand`（手持物品） 和 `offhand`（副手物品）
+
+以及，**修饰符** 的 `:` 号也是需要写的，不过 `:` 之后写不写都一样
+
+背包槽位可参考下图：
+
+![](./_images/CheckItem/玩家背包槽位图.webp)
+
+下方是使用案例
+
+![](./_images/CheckItem/getinfo_1.png)
+
+![](./_images/CheckItem/getinfo_2.png)
+
+### 例子：收取ia物品
 
 收取指定ia物品的指定数量
 
-```
+```text
 %checkitem_remove_nbtstrings:itemsadder..id..data=ia物品ID,amt:数量%
 ```
 
@@ -112,10 +139,11 @@ sidebar_position: 4
 
 ## 启用give和remove
 
-```
+```yaml
 expansions:
   checkitem:
     give_enabled: false
     remove_enabled: false
 ```
+
 将两个`false`改为`true` 接着 `/papi reload`

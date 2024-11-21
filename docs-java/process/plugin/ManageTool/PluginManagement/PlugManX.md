@@ -1,4 +1,5 @@
 ---
+title: PlugMan
 sidebar_position: 2
 ---
 
@@ -6,13 +7,13 @@ sidebar_position: 2
 
 :::info
 
+`Bukkit(旧)` https://dev.bukkit.org/projects/plugman
+
 `SpigotMC` https://www.spigotmc.org/resources/.88135/
 
 `GitHub(旧)` https://github.com/ryan-clancy/PlugMan
 
 `GitHub(新)` https://github.com/Test-Account666/PlugManX
-
-`Bukkit(旧)` https://dev.bukkit.org/projects/plugman
 
 :::
 

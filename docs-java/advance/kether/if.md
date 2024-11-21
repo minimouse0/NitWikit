@@ -3,47 +3,48 @@ title: 逻辑判断
 sidebar_position: 3
 ---
 
+<!--markdownlint-disable no-duplicate-heading-->
+
 # 逻辑判断
 
 ## 布尔值(boolean)
 
-它只有两个取值,即 **真(true)** 和 **假(false)**
+它只有两个取值，即 **真(true)** 和 **假(false)**
 
-或者说,**是(true)** 和 **否(false)**
+或者说，**是(true)** 和 **否(false)**
 
 ## 权限判断(Permission)
 
 > https://kether.tabooproject.org/list.html#Permission
 
-判断玩家是否拥有某权限,如果是,则返回 **true** ,否,则返回 **false**
+判断玩家是否拥有某权限，如果是，则返回 **true** ，否，则返回 **false**
 
 ![](_images/vul-perm.png)
 
-我是op,所以我拥有此权限,返回了 true
+我是op，所以我拥有此权限，返回了 true
 
-同 [PlaceholderAPI](basic.md#变量placeholderapi) 一样,**Permission** 也有一个简写 **perm**
+同 [PlaceholderAPI](basic.md#变量placeholderapi) 一样，**Permission** 也有一个简写 **perm**
 
 ## 判断为否(Not)
 
-上面是判断拥有此权限,那么我如何判断不拥有此权限呢？
+上面是判断拥有此权限，那么我如何判断不拥有此权限呢？
 
 ![](_images/vul-permNot_1.png)
 
 ![](_images/正经笑.jpg)
 
-咳咳,开玩笑的,驿站怎么可能用过这么傻逼的写法呢
+咳咳，开玩笑的，驿站怎么可能用过这么傻逼的写法呢
 
 ![](_images/冒汗.jpg)
 
 > https://kether.tabooproject.org/list.html#Not
-
-> 判断动作的返回值是否为否,即否定动作的结果。
+> 判断动作的返回值是否为否，即否定动作的结果。
 
 ![](_images/vul-permNot_2.png)
 
-因为我拥有此权限,所以 perm 判断是 true
+因为我拥有此权限，所以 perm 判断是 true
 
-接着因为 not,最后的结果是 false
+接着因为 not，最后的结果是 false
 
 perm -> not
 
@@ -51,7 +52,7 @@ perm -> not
 
 > https://kether.tabooproject.org/list.html#Check
 
-```
+```kether
 check 动作1 {symbol} 动作2
 ```
 
@@ -78,19 +79,19 @@ check 动作1 {symbol} 动作2
 
 ### 单分支
 
-```
+```text
 /vul eval if 条件 then 执行的动作
 ```
 
 条件判断为 **true** 则执行 then 后面的动作
 
-注：这里的条件也是指动作,即 动作的返回值为 **true** 则执行 then 后面的动作
+注：这里的条件也是指动作，即 动作的返回值为 **true** 则执行 then 后面的动作
 
 ![](_images/if_1.png)
 
-上面只是执行单个动作,那么,如何让他判断 **true** 后执行多行动作？
+上面只是执行单个动作，那么，如何让他判断 **true** 后执行多行动作？
 
-```
+```text
 if 条件 then {
     语句1
     语句2
@@ -100,7 +101,7 @@ if 条件 then {
 
 ### 双分支
 
-```
+```text
 /vul eval if 条件 then true执行的动作 else false执行的动作
 ```
 
@@ -109,7 +110,7 @@ if 条件 then {
 
 执行多行动作
 
-```
+```text
 if 条件 then {
     语句1
     语句2
@@ -123,12 +124,13 @@ if 条件 then {
 
 if动作的连续使用
 
-```
+```text
 /vul evel if 条件1 then 动作1 else if 条件2 then 动作2 else if 条件3 then 动作3
 ```
 
 多行语句
-```
+
+```text
 if 条件1 then {
     动作1
     动作2
@@ -145,8 +147,9 @@ if 条件1 then {
 
 > https://kether.tabooproject.org/list.html#Case_&_When
 
-#### 单动作
-```
+### 单动作
+
+```kether
 if check player name == postyizhan then tell "是驿站！"
 else if check player name == lilingfeng then tell "是驿站的黑奴"
 else if check player name == MC_jiaolong then tell "这也是黑奴"
@@ -155,7 +158,7 @@ else tell"这谁啊"
 
 上面的改成 Case & When 就是
 
-```
+```kether
 case player name [
   when postyizhan -> tell "是驿站！"
   when lilingfeng -> tell "是驿站的黑奴"
@@ -164,10 +167,11 @@ case player name [
 ]
 ```
 
-#### 多动作
+### 多动作
+
 当然他也可以写多行动作
 
-```
+```kether
 case player name [
   when postyizhan -> {
     tell "是驿站！"
@@ -179,11 +183,13 @@ case player name [
 ]
 ```
 
-#### 逻辑判断
+### 逻辑判断
+
 他还可以进行逻辑判断！
 
 单动作和多动作放一起展示了
-```
+
+```kether
 case 1 [
     when < 10 -> {
         tell "这个数比10小"
@@ -198,35 +204,34 @@ case 1 [
 ### 全部满足(All)
 
 > https://kether.tabooproject.org/list.html#All
-
 > 判断动作列表的所有返回值是否均为是。
 
-```
+```kether
 all [ 动作1 动作2 动作3 更多 ]
 ```
 
 例如：
-```
+
+```text
 /vul eval if all [ perm vulpecula.command not perm luckperms.editor ] then tell 通过 else 不通过
 ```
 
-玩家拥有权限 vulpecula.command 没有权限 luckperms.editor 则通过,否则不通过
+玩家拥有权限 vulpecula.command 没有权限 luckperms.editor 则通过，否则不通过
 
 ![](_images/if_2.png)
 
 ### 一个满足(Any)
 
 > https://kether.tabooproject.org/list.html#Any
-
 > 判断动作列表的所有返回值是否含有是。
 
-```
+```kether
 any [ 动作1 动作2 动作3 更多 ]
 ```
 
 例如：
 
-```
+```text
 /vul eval if any [ perm vulpecula.command not perm luckperms.editor ] then tell 通过 else 不通过
 ```
 
@@ -238,7 +243,7 @@ any [ 动作1 动作2 动作3 更多 ]
 
 #### all_any多行
 
-```
+```kether
 all [ 条件1 条件2 ]
 any [ 条件1 条件2]
 ### 等价于
@@ -252,9 +257,9 @@ any [
 ]
 ```
 
-####  判断null字符串
+#### 判断null字符串
 
-如果一个动作,变量,或者其他什么东西会有输出null的情况,而你想判断这个情况
+如果一个动作，变量，或者其他什么东西会有输出null的情况，而你想判断这个情况
 
 但是 `null` 是一个已有的动作：https://kether.tabooproject.org/list.html#Null
 

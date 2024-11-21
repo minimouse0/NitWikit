@@ -1,4 +1,5 @@
 ---
+title: Math
 sidebar_position: 3
 ---
 
@@ -15,7 +16,8 @@ sidebar_position: 3
 :::
 
 ## 安装此扩展
-```
+
+```text
 /papi ecloud download Math
 /papi reload
 ```
@@ -24,16 +26,17 @@ sidebar_position: 3
 
 ### 基础
 
-```
+```text
 %math_你的算式%
 ```
+
 **如：**
 
 ![](_images/Math/1.png)
 
-发现输出的结果有三位小数,你可以在 `plugins\PlaceholderAPI\config.yml` 中找到
+发现输出的结果有三位小数，你可以在 `plugins\PlaceholderAPI\config.yml` 中找到
 
-```
+```yaml
   math:
     Disable-Warnings: false
     Rounding: half-up
@@ -43,9 +46,9 @@ sidebar_position: 3
 
 修改`Decimals: 3`即可修改默认输出的小数位数
 
-**或者**
+或者：
 
-```
+```text
 %math_小数位数_你的算式%
 ```
 
@@ -72,4 +75,4 @@ sidebar_position: 3
 
 ![](_images/Math/4.png)
 
-我本地测试服务器里就我自己一个人,所以 1+1=2
+我本地测试服务器里就我自己一个人，所以 1+1=2

@@ -25,10 +25,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://yizhan.wiki',
+  url: 'https://nitwikit.yizhan.wiki',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.BASE_URL ?? '/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -46,6 +46,9 @@ const config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
+  clientModules: [
+      require.resolve('./src/clientModules/routeModules.js')
+  ],
 
   presets: [
     [
@@ -124,6 +127,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      giscus: {
+        repo: 'postyizhan/NitWikit',
+        repoId: 'R_kgDOLkVR-A',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOLkVR-M4CkTAe'
+      },
       // 标题渲染范围
       tableOfContents: {
         minHeadingLevel: 2,
@@ -195,8 +204,16 @@ const config = {
             title: '文档',
             items: [
               {
-                label: '开始',
-                to: '/intro',
+                label: '驿站主页',
+                to: 'https://yizhan.wiki',
+              },
+              {
+                label: 'Docusaurus 主题',
+                to: 'https://nitwikit.yizhan.wiki',
+              },
+              {
+                label: 'VitePress 主题',
+                to: 'https://nitwikit2.yizhan.wiki',
               },
               {
                 label: 'GitHub',
@@ -218,11 +235,19 @@ const config = {
             items: [
               {
                 label: '服主资源导航页',
-                href: 'http://nav.yumc.fun',
+                href: 'http://mcnav.fun',
               },
               {
                 label: 'CSKB 日冕知识库',
                 href: 'https://kb.corona.studio',
+              },
+              {
+                label: 'McRes 灵依资源站',
+                href: 'https://mcres.cn/',
+              },
+              {
+                label: 'Tinksp 资源站',
+                href: 'https://www.tinksp.com/',
               },
             ],
           },
@@ -237,6 +262,8 @@ const config = {
       },
       // 颜色随系统切换
       colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
         respectPrefersColorScheme: true,
       },
 

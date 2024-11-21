@@ -9,7 +9,7 @@ sidebar_position: 5
 
 详细请查看：https://www.yuque.com/sacredcraft/kether/action-math
 
-```
+```kether
 /* 加法运算：等价于 1+2+3 = 6 */
 math add [ 1 2 3 ]
 math + [ 1 2 3 ]
@@ -29,16 +29,17 @@ math * [ 3 2 5 ]
 math div [ 6 2 ]
 math / [ 6 2 ]
 ```
-除了上面几种用法,Math 还有一种比较舒服的写法：
 
-```
+除了上面几种用法，Math 还有一种比较舒服的写法：
+
+```text
 ​/* 计算 1 + 3 x 6 ÷ 3 - 2 */
 math 1 + 3 * 5 / 6 - 2
 ```
 
 当然也可以用上一节学到的变量来运算
 
-```
+```text
 /vul eval set a to 1 set b to 2 math &a - &b
 ```
 
@@ -53,7 +54,7 @@ math 1 + 3 * 5 / 6 - 2
 - 乘法：a * b
 - 除法：a / b
 
-- 取余：取余操作使用 % 符号。例如,计算 10 除以 3 的余数：10 % 3。
+- 取余：取余操作使用 % 符号。例如，计算 10 除以 3 的余数：10 % 3。
 
 当然也可以使用括号：
 

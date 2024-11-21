@@ -1,22 +1,23 @@
 ---
+title: TrMenu
 sidebar_position: 4
 ---
 
 # TrMenu
 
-一个功能强大的菜单插件,国人插件。
+一个功能强大的菜单插件，国人插件。
 
 ![](_images/trm一定要看wiki呐.jpg)
 
 ## TrMenu v2
 
-早已停更,不推荐使用
+早已停更，不推荐使用
 
 :::info
 
-`文档` https://temp-17.gitbook.io/trmenu/v/chinese
-
 `SpigotMC` https://www.spigotmc.org/resources/.83120/
+
+`文档` https://temp-17.gitbook.io/trmenu/v/chinese
 
 :::
 
@@ -24,29 +25,51 @@ sidebar_position: 4
 
 :::info
 
-`文档(新)` https://hhhhhy.gitbook.io/trmenu-v3
-
-`文档(旧)` https://trmenu.trixey.cc/
-
-`如何支持1.8` https://hhhhhy.gitbook.io/trmenu-v3/appendix/v3-guide#datasource.yml-dui-yu-1.8-fu-wu-duan
-
-`GitHub(不推荐,已停止维护)` https://github.com/TrPlugins/TrMenu/tree/stable/v3
-
-`GitHub(推荐,社区维护)` https://github.com/Dreeam-qwq/TrMenu
-
-`vscode插件-trm语法提示` https://marketplace.visualstudio.com/items?itemName=hhhhhy.trmenu-helper
-
 `MineBBS` https://www.minebbs.com/resources/trmenu-bug.9080/
+
+`GitHub(不推荐，已停止维护)` https://github.com/TrPlugins/TrMenu/tree/stable/v3
+
+`GitHub(推荐，社区维护)` https://github.com/Dreeam-qwq/TrMenu
 
 :::
 
 交流群：325014486
 
-## Invero
+[如何支持1.8](https://hhhhhy.gitbook.io/trmenu-v3/appendix/v3-guide#datasource.yml-dui-yu-1.8-fu-wu-duan)
 
-Invero 俗称 TrMenu v4
+## 文档
 
-详情请见 [Invero](Invero.md)
+- https://trmenu.trixey.cc
+
+旧文档，不推荐阅读
+
+- https://hhhhhy.gitbook.io/trmenu-v3
+
+新文档，推荐阅读，但可能需要挂梯子
+
+- https://mirror.yizhan.wiki/https://hhhhhy.gitbook.io/trmenu-v3
+
+新文档的笨蛋镜像，不挂梯也可访问
+
+- https://bukkit.wiki/plugins/plugins/trmenu
+
+阔大帅的文档，拥有上方新文档的全部内容且访问速度快
+
+- https://wiki.ptms.ink/index.php?title=%E7%A4%BE%E5%8C%BA:TrMenu
+
+社区文档，或许比上方的文档更容易理解
+
+## vscode 插件
+
+与 TrMenu 或 [kether](/docs-java/advance/kether/kether.md) 有关的 vscode 插件
+
+- [TrMenu-Helper](https://marketplace.visualstudio.com/items?itemName=hhhhhy.trmenu-helper)
+
+TrMenu 语法提示
+
+- [kether-snippet](https://marketplace.visualstudio.com/items?itemName=LiteCat.kether-snippet)
+
+kether 语法提示
 
 ## 案例
 
@@ -94,24 +117,41 @@ Invero 俗称 TrMenu v4
       - condition: 'tell 想不到骚话'
 ```
 
+特别的，写在此处的语句要比 name，lore 等位置先执行，下方是一个使用此特性的案例
+
+```yaml
+  'A':
+    display:
+      material: stone
+    icons:
+      - condition: 'meta set mat to stone'
+      - condition: 'tell meta get mat'
+      - condition: 'meta set amt to 10'
+    actions:
+      all:
+        tell meta get mat
+        papi join [ '%checkitem_remove_mat:' meta get mat ',amt:' meta get amt '%' ]
+```
+
 ![](_images/子图标写动作.png)
 
 ### 玩家信息
 
 这是 TrMenu 的一个默认案例
 
-**右键玩家执行动作**
+#### 右键玩家执行动作
 
 https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
 
 此处为右键玩家打开名为 Profile 的菜单
 
 找到
+
 ```yaml
 Right-Click-Player: 'open: Profile'
 ```
 
-**玩家信息菜单**
+#### 玩家信息菜单
 
 https://github.com/Dreeam-qwq/TrMenu/blob/stable/v3/plugin/src/main/resources/menus/Profile.yml
 
@@ -119,7 +159,7 @@ https://github.com/Dreeam-qwq/TrMenu/blob/stable/v3/plugin/src/main/resources/me
 
 或者说 shift+F 打开菜单？
 
-**蹲下+替换副手执行动作**
+#### 蹲下+替换副手执行动作
 
 https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
 
@@ -130,13 +170,13 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
       deny: 'return'
 ```
 
-### 每日签到
+<!-- ### 每日签到
 
 [查看配置](https://github.com/postyizhan/NitWikit/blob/main/docs-java/process/plugin/other/Menu/demo/trmv3-每日签到.yml)
 
 据作者所说重启服务器会丢数据
 
-不过这些配置主要是用来学习的,不会有人直接cv过去用吧
+不过这些配置主要是用来学习的，不会有人直接cv过去用吧 -->
 
 ### 商店
 
@@ -167,16 +207,16 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
           - 'papi %checkitem_remove_mat:diamond,amt:2%'
           - 'papi %checkitem_give_mat:emerald,amt:3%'
         deny:
-          - 'tell inline "物品不够,你有{{papi %checkitem_amount_mat:diamond,amt:2%}}个,还差{{math 2 - papi %checkitem_amount_mat:diamond,amt:2%}}个"'
+          - 'tell inline "物品不够，你有{{papi %checkitem_amount_mat:diamond,amt:2%}}个，还差{{math 2 - papi %checkitem_amount_mat:diamond,amt:2%}}个"'
   '写法2':
     display:
       name: '两个钻石换三个绿宝石'
       material: stone
     actions:
-      - if papi %checkitem_mat:diamond,amt:2% then {
-          papi %checkitem_remove_mat:diamond,amt:2%
-          papi %checkitem_give_mat:emerald,amt:3%
-        } else tell inline "物品不够,你有{{papi %checkitem_amount_mat:diamond,amt:2%}}个,还差{{math 2 - papi %checkitem_amount_mat:diamond,amt:2%}}个"
+      - if papi %checkitem_mat:diamond，amt:2% then {
+          papi %checkitem_remove_mat:diamond，amt:2%
+          papi %checkitem_give_mat:emerald，amt:3%
+        } else tell inline "物品不够，你有{{papi %checkitem_amount_mat:diamond,amt:2%}}个，还差{{math 2 - papi %checkitem_amount_mat:diamond,amt:2%}}个"
 ```
 
 #### 购买
@@ -192,7 +232,7 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
           - 'take-money: 10'
           - 'papi %checkitem_give_mat:emerald,amt:3%'
         deny:
-          - tell inline "钱不够,你有{{papi %vault_eco_balance%}}块,还差{{math 10 - papi %vault_eco_balance%}}块"
+          - tell inline "钱不够，你有{{papi %vault_eco_balance%}}块，还差{{math 10 - papi %vault_eco_balance%}}块"
   '写法2':
     display:
       name: '10块钱买2个钻石'
@@ -201,7 +241,7 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
       - if money 10 then {
           command inline"money take {{player name}} 10"
           papi %checkitem_give_mat:emerald,amt:3%
-        } else tell inline "钱不够,你有{{papi %vault_eco_balance%}}块,还差{{math 10 - papi %vault_eco_balance%}}块"
+        } else tell inline "钱不够，你有{{papi %vault_eco_balance%}}块，还差{{math 10 - papi %vault_eco_balance%}}块"
 ```
 
 #### 个人限购
@@ -213,6 +253,8 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
 - [CheckItem](../../Front-Plugin/PlaceHolderAPI/CheckItem.md)
 - [妙妙写法](#妙妙写法)
 - [\{condition=\}条件](https://hhhhhy.gitbook.io/trmenu-v3/menu/action/option#tiao-jian)
+
+<!--markdownlint-disable line-length-->
 
 ```yaml
   'C':
@@ -234,9 +276,11 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
           # 给货
           - papi %checkitem_give_mat:emerald,amt:3%
         deny:
-          - tell inline 钱不够,你有{{papi %vault_eco_balance%}}块,还差{{math papi %trmenu_meta_单价% - papi %vault_eco_balance%}}块 {condition=not money meta get 单价}
+          - tell inline 钱不够，你有{{papi %vault_eco_balance%}}块，还差{{math papi %trmenu_meta_单价% - papi %vault_eco_balance%}}块 {condition=not money meta get 单价}
           - tell inline 限购次数用完了 {condition=check data get meta get KEY == 0}
 ```
+
+<!--markdownlint-enable line-length-->
 
 #### 全服限购
 
@@ -246,11 +290,11 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
 
 #### 出售
 
-和上面的购买几乎一样的逻辑,自己去学 CheckItem 然后把 give 改成 remove
+和上面的购买几乎一样的逻辑，自己去学 CheckItem 然后把 give 改成 remove
 
 #### 个人限售
 
-和上面的个人限售几乎一样的逻辑,自己去学
+和上面的个人限售几乎一样的逻辑，自己去学
 
 #### 全服限售
 

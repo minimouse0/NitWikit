@@ -6,7 +6,8 @@ sidebar_position: 5
 # 小妙招
 
 ## 网页版可视化编辑器
-```
+
+```text
 lp editor
 ```
 
@@ -14,9 +15,9 @@ lp editor
 
 ## 日志
 
-可以实时打印权限检查情况,方便排查问题。
+可以实时打印权限检查情况，方便排查问题。
 
-```
+```text
 lp verbose <on|record|off|upload> [filter]
 ```
 
@@ -25,7 +26,7 @@ lp verbose <on|record|off|upload> [filter]
 - `on` - 开启权限检查。
 - `off` - 关闭权限检查。
 - `record` - 记录日志。
-- `paste` - 停止记录,显示日志。
+- `paste` - 停止记录，显示日志。
 
 #### on
 
@@ -33,7 +34,7 @@ lp verbose <on|record|off|upload> [filter]
 
 #### 例子
 
-```
+```text
 lp verbose on !Luck & !anticheat
 ```
 
@@ -42,15 +43,16 @@ lp verbose on !Luck & !anticheat
 - `anticheat & !anticheat.check` - 匹配以'anticheat' 开头 但不匹配 'anticheat.check' 开头的权限检查。
 
 #### paste
+
 ![](_images/paste-1.png)
 
 ![](_images/paste-2.png)
 
 ## 执行命令
 
-让玩家执行命令,并打印此命令的权限检查。
+让玩家执行命令，并打印此命令的权限检查。
 
-```
+```text
 /lp verbose command <me|player> <command>
 ```
 
